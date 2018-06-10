@@ -1,7 +1,10 @@
-import re
-text = "3+(2-5)afa"
+import sqlite3
 
-if re.match('^[0-9\+\-\*\-\(\)]+$', text):
-	print('yes')
-else:
-    print('no') 
+conn = sqlite3.connect('test.db')
+print "Opened database successfully";
+
+conn.execute(" DROP TABLE COMPANY" )
+conn.commit()
+
+print "Operation done successfully";
+conn.close()
