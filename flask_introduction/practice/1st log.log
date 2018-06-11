@@ -1,0 +1,63 @@
+
+
+
+
+ec2-user@ip-172-31-4-160:~/program
+[ec2-user@ip-172-31-4-160 program]$ amazonproject/bin/activate
+(amazonproject) [ec2-user@ip-172-31-4-160 program]$ pip install flask
+Requirement already satisfied: flask in ./amazonproject/lib64/python2.7/site-packages (1.0.2)
+Requirement already satisfied: itsdangerous>=0.24 in ./amazonproject/lib/python2.7/site-packages (from flask) (0.24)
+Requirement already satisfied: Jinja2>=2.10 in ./amazonproject/lib/python2.7/site-packages (from flask) (2.10)
+Requirement already satisfied: Werkzeug>=0.14 in ./amazonproject/lib/python2.7/site-packages (from flask) (0.14.1)
+Requirement already satisfied: click>=5.1 in ./amazonproject/lib/python2.7/site-packages (from flask) (6.7)
+Requirement already satisfied: MarkupSafe>=0.23 in ./amazonproject/lib/python2.7/site-packages (from Jinja2>=2.10->flask) (1.0)
+]0;ec2-user@ip-172-31-4-160:~/program
+(amazonproject) [ec2-user@ip-172-31-4-160 program]$ pip install flask_auth
+Collecting flask_auth
+[?25l  Downloading https://files.pythonhosted.org/packages/b5/f5/0be3fa48160222a538d7db1715ea88ca8674aa2dbfcb2ba10b9cf47d16cd/Flask-Auth-0.85.tar.gz (46kB)
+
+[K    21% |███████                         | 10kB 21.5MB/s eta 0:00:01
+[K    43% |██████████████                  | 20kB 2.8MB/s eta 0:00:01
+[K    65% |█████████████████████           | 30kB 3.3MB/s eta 0:00:01
+[K    87% |████████████████████████████    | 40kB 2.9MB/s eta 0:00:01
+[K    100% |████████████████████████████████| 51kB 3.4MB/s 
+[?25hRequirement already satisfied: Flask in ./amazonproject/lib64/python2.7/site-packages (from flask_auth) (1.0.2)
+Requirement already satisfied: itsdangerous>=0.24 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_auth) (0.24)
+Requirement already satisfied: Jinja2>=2.10 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_auth) (2.10)
+Requirement already satisfied: Werkzeug>=0.14 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_auth) (0.14.1)
+Requirement already satisfied: click>=5.1 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_auth) (6.7)
+Requirement already satisfied: MarkupSafe>=0.23 in ./amazonproject/lib/python2.7/site-packages (from Jinja2>=2.10->Flask->flask_auth) (1.0)
+Building wheels for collected packages: flask-auth
+  Running setup.py bdist_wheel for flask-auth ... [?25l- done
+[?25h  Stored in directory: /home/ec2-user/.cache/pip/wheels/1d/59/09/716ca2ca978d1485f97a0f04c3f147592df7b6fb195dd0b30e
+Successfully built flask-auth
+Installing collected packages: flask-auth
+Successfully installed flask-auth-0.85
+]0;
+sudo pip install sqlite3
+Collecting sqlite3
+[31m  Could not find a version that satisfies the requirement sqlite3 (from versions: )[0m
+[31mNo matching distribution found for sqlite3
+Requirement already satisfied: flask_httpauth in ./amazonproject/lib64/python2.7/site-packages (3.2.3)
+Requirement already satisfied: Flask in ./amazonproject/lib64/python2.7/site-packages (from flask_httpauth) (1.0.2)
+Requirement already satisfied: itsdangerous>=0.24 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_httpauth) (0.24)
+Requirement already satisfied: Jinja2>=2.10 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_httpauth) (2.10)
+Requirement already satisfied: Werkzeug>=0.14 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_httpauth) (0.14.1)
+Requirement already satisfied: click>=5.1 in ./amazonproject/lib/python2.7/site-packages (from Flask->flask_httpauth) (6.7)
+Requirement already satisfied: MarkupSafe>=0.23 in ./amazonproject/lib/python2.7/site-packages (from Jinja2>=2.10->Flask->flask_httpauth) (1.0)
+]0;ec2-user@ip-172-31-4-160:~/program
+(amazonproject) [ec2-user@ip-172-31-4-160 program]$ python run hello.py
+ * Serving Flask app "hello" (lazy loading)
+ * Environment: production
+[31m   WARNING: Do not use the development server in a production environment.[0m
+[2m   Use a production WSGI server instead.[0m
+ * Debug mode: off
+ * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+^C]0;ec2-user@ip-172-31-4-160:~/program(amazonproject) [ec2-user@ip-172-31-4-160 program]$ exit
+[ec2-user@ip-172-31-4-160 program]$ cp test start
+[ec2-user@ip-172-31-4-160 program]$ vim start
+[ec2-user@ip-172-31-4-160 program]$ sudo cp start /etc/init.d
+[ec2-user@ip-172-31-4-160 program]$ sudo chmod 755 /etc/init.d/start
+[ec2-user@ip-172-31-4-160 program]$ sudo chkconfig --add start
+[ec2-user@ip-172-31-4-160 program]$ sudo chkconfig start on
+[ec2-user@ip-172-31-4-160 program]$ exit

@@ -1,10 +1,7 @@
-import sqlite3
+sales = [(50.0,), (20.0,)]
+flattened = []
+for sublist in sales:
+	for elements in sublist:
+		flattened.append(elements)
 
-conn = sqlite3.connect('test.db')
-print "Opened database successfully";
-
-conn.execute(" DROP TABLE COMPANY" )
-conn.commit()
-
-print "Operation done successfully";
-conn.close()
+print flattened
