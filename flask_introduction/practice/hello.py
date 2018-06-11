@@ -47,22 +47,21 @@ def calculation():
 #question 4-----------------------------------------------------
 @app.route('/stocker')
 def storage():
-	conn = sqlite3.connect("storage.db")
+	conn = sqlite3.connect("./storage.db")
 	cursor = conn.cursor()
-	# function = request.args.get('function')
-	# name = request.args.get('name')
-	# amount = request.args.get('amount')
-	# price = request.args.get('price')
-	cursor.execute("INSERT INTO STORAGE (NAME,AMOUNT,SALES)\
-		VALUES('asdf',3,0);")
-	conn.commit()
-	conn.close()
+	function = request.args.get('function')
+	name = request.args.get('name')
+	amount = request.args.get('amount')
+	price = request.args.get('price')
 
-	return "YES"
 
-# 	if function == "addstock":
-# 		cursor.execute("INSERT INTO STORAGE (NAME,AMOUNT)\
-# 			VALUES("+name+","+amount+")")
+	if function == "addstock":
+		cursor.execute("INSERT INTO STORAGE (NAME,AMOUNT,SALES)\
+		VALUES('abc',2,0);")
+		#problem
+		conn.commit()
+		conn.close()
+		return "Operation Success"
 
 # # 	if function == "checkstock":
 # # 		#do something
@@ -71,10 +70,13 @@ def storage():
 # # 	if function == "checksales":
 # 		#do something
 	
-# 	if function == "deleteall":
-# 		cursor.execute("DELETE FROM STORAGE")
-# 	else:
-# 		return "INPUT ERROR"
+	if function == "deleteall":
+		cursor.execute("DELETE FROM STORAGE")
+		conn.commit()
+		conn.close()
+		return "Operation Success"
+	else:
+		return "INPUT ERROR"
 
 
 
@@ -129,4 +131,4 @@ def storage():
 #Start server----------------------------------------------------
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=False,port=8080)
+    app.run()#host='0.0.0.0',debug=False,port=8080)
