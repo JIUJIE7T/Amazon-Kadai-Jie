@@ -4,7 +4,7 @@ import re
 import sqlite3
 
 app = Flask(__name__) 
-app.config['SECRET_KEY'] = 'its a key'
+app.config['SECRET_KEY'] = 'SECRET KEY HERE'
 
 #question 2 Authentication ------------------------------------
 users = {
@@ -17,7 +17,7 @@ def get_pw(username):
 	if username in users:
 		return users.get(username)
 	else:
-		return 401
+		return 404
 	return None
 
 #--------------------------------------------------------------
