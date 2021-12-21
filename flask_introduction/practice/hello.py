@@ -36,7 +36,7 @@ def index():
 	return "SUCCESS"
 
 #question 3-----------------------------------------------------
-@app.route('/calc')
+@app.route('v1/stocks')
 def calculation():
     input = request.query_string
     if re.match('^[0-9\+\-\*\/\(\)]+$',input):
