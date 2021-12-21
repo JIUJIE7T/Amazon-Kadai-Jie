@@ -4,7 +4,8 @@ import re
 import sqlite3
 
 app = Flask(__name__) 
-app.config['SECRET_KEY'] = ''
+app.config['SECRET_KEY'] = 'it's a key'
+app.config['SESSION_TYPE'] = 'filesystem'
 
 #question 2 Authentication ------------------------------------
 users = {
