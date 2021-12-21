@@ -1,5 +1,5 @@
 from flask import Flask,request,Response,g
-from flask_httpauth import HTTPBasicAuth #authentication
+from flask_httpauth import HTTPDigestAuth #authentication
 import re
 import sqlite3
 
@@ -10,7 +10,7 @@ users = {
 	"aws":"candidate"
 }
 
-auth = HTTPBasicAuth() #authentication
+auth = HTTPDigestAuth() #authentication
 @auth.get_password
 def get_pw(username):
 	if username in users:
