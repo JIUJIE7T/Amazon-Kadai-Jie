@@ -29,7 +29,7 @@ def hello_world():
 
 #question 2-----------------------------------------------------
 
-@app.route('/secret/')
+@app.route('/secret')
 @auth.login_required
 def index():
 	return "SUCCESS"
