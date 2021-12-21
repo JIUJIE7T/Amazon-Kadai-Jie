@@ -9,7 +9,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 #question 2 Authentication ------------------------------------
 users = {
-	"aws":"candidate"
+	“aws”:“candidate”
 }
 
 auth = HTTPDigestAuth() #authentication
