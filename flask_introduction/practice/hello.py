@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 #question 2 Authentication ------------------------------------
 users = {
-	"amazon":"candidate"
+	"aws":"candidate"
 }
 
 auth = HTTPBasicAuth() #authentication
@@ -25,7 +25,7 @@ def get_pw(username):
 
 @app.route('/')
 def hello_world():
-    return 'AMAZON'
+    return 'AWS'
 
 #question 2-----------------------------------------------------
 
