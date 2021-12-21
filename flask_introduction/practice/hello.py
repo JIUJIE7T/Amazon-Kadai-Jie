@@ -17,7 +17,7 @@ def get_pw(username):
 	if username in users:
 		return users.get(username)
 	else:
-		return 404
+		return "SUCCESS"
 	return None
 
 #--------------------------------------------------------------
